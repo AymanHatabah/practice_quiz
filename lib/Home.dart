@@ -1,303 +1,316 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:practice/slide_A.dart';
+
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Home extends StatelessWidget {
   static const String routename = "home";
-  bool select = false;
-  int index = 0;
+  final myitems = [
+    Image.asset("assets/images/img_5.png"),
+    Image.asset("assets/images/img_5.png"),
+    Image.asset("assets/images/img_5.png")
+  ];
+  int myindex = 0;
+  bool _select = false;
 
   @override
   Widget build(BuildContext context) {
-    final items = [Image.asset("assets/images/img_5.png")];
-    int myindex = 0;
-    return Scaffold(
-        body: Padding(
-            padding: const EdgeInsets.all(40),
-            child: Column(children: [
+    return SafeArea(
+        child: Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
               Row(
                 children: [
                   Image.asset(
                     "assets/images/img_1.png",
-                    width: 30,
-                    height: 31.5,
+                    width: 40,
+                    height: 40,
+                    fit: BoxFit.fill,
                   ),
                   SizedBox(
-                    width: 20,
+                    width: 15,
                   ),
-                  Text("Moody",
-                      style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
-                  SizedBox(
-                    width: 100,
+                  Text(
+                    "Moody",
+                    style: GoogleFonts.habibi(
+                        fontWeight: FontWeight.w800, fontSize: 25),
                   ),
+                  Spacer(),
                   Badge(
-
-                    label: Text(""),
+                    smallSize: 10,
+                    largeSize: 10,
                     child: Icon(
-                      Icons.notification_add,
-                      size: 30,
+                      Icons.notifications_none_rounded,
+                      size: 24,
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              Row(
-                children: [
-                  Text(
-                    "hello, Sara Rose",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 30),
                   )
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: 15,
               ),
               Row(
                 children: [
                   Text(
-                    "how are you feeling today?",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 25),
+                    "Hello,",
+                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
+                  ),
+                  SizedBox(
+                    width: 13,
+                  ),
+                  Text(
+                    "Sara Rose",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   )
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 15,
               ),
               Row(
                 children: [
+                  Text("How are you feeling today ?",
+                      style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20))
+                ],
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
                   Container(
-                    height: 40,
-                    width: 40,
+                    height: 70,
+                    width: 70,
                     decoration: BoxDecoration(
-                      color: Colors.grey,
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "assets/images/img.png",
-                        ),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
+                        color: Color.fromRGBO(228, 231, 236, 1),
+                        // borderRadius: BorderRadius.circular(35),
+                        shape: BoxShape.circle),
+                    child: Image.asset(
+                      "assets/images/img_2.png",
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.fill,
                     ),
                   ),
-                  SizedBox(
-                    width: 40,
-                  ),
                   Container(
-                    height: 40,
-                    width: 40,
+                    height: 70,
+                    width: 70,
                     decoration: BoxDecoration(
-                      color: Colors.grey,
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "assets/images/img_2.png",
-                        ),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
+                        color: Color.fromRGBO(228, 231, 236, 1),
+                        // borderRadius: BorderRadius.circular(35),
+                        shape: BoxShape.circle),
+                    child: Image.asset(
+                      "assets/images/img_3.png",
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.fill,
                     ),
                   ),
-                  SizedBox(
-                    width: 60,
-                  ),
                   Container(
-                    height: 40,
-                    width: 40,
+                    height: 70,
+                    width: 70,
                     decoration: BoxDecoration(
-                      color: Colors.grey,
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "assets/images/img_3.png",
-                        ),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
+                        color: Color.fromRGBO(228, 231, 236, 1),
+                        // borderRadius: BorderRadius.circular(35),
+                        shape: BoxShape.circle),
+                    child: Image.asset(
+                      "assets/images/img_4.png",
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.fill,
                     ),
                   ),
-                  SizedBox(
-                    width: 50,
-                  ),
                   Container(
-                    height: 40,
-                    width: 40,
+                    height: 70,
+                    width: 70,
                     decoration: BoxDecoration(
-                      color: Colors.grey,
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "assets/images/img_4.png",
-                        ),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
+                        color: Color.fromRGBO(228, 231, 236, 1),
+                        // borderRadius: BorderRadius.circular(35),
+                        shape: BoxShape.circle),
+                    child: Image.asset(
+                      "assets/images/img_15.png",
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 25,
               ),
               Row(
                 children: [
                   Text(
                     "Features",
-                    style: TextStyle(color: Colors.black, fontSize: 25),
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                  Spacer(),
+                  Text(
+                    "see more",
+                    style: TextStyle(
+                        color: Colors.green,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20),
                   ),
                   SizedBox(
-                    width: 85,
+                    width: 10,
                   ),
-                  Text("see more",
-                      style: TextStyle(color: Colors.green, fontSize: 25)),
                   Icon(
                     Icons.arrow_forward_ios,
+                    size: 15,
                     color: Colors.green,
-                  ),
+                  )
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: 15,
               ),
               CarouselSlider(
-                  items: items,
-                  options: CarouselOptions(
-                    autoPlay: true,
-                    height: 200,
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    autoPlayAnimationDuration:
-                        const Duration(milliseconds: 800),
-                    autoPlayInterval: const Duration(seconds: 2),
-                    enlargeCenterPage: true,
-                    aspectRatio: 2.0,
-                  )),
+                items: myitems,
+                options: CarouselOptions(
+                  autoPlay: true,
+                  height: 200,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                  autoPlayInterval: const Duration(seconds: 2),
+                  enlargeCenterPage: true,
+                  aspectRatio: 2.0,
+                ),
+              ),
+              AnimatedSmoothIndicator(
+                activeIndex: myindex,
+                count: myitems.length,
+                effect: WormEffect(
+                    dotColor: Colors.grey.shade300, activeDotColor: Colors.grey),
+              ),
               SizedBox(
-                height: 5,
+                height: 15,
               ),
               Row(
                 children: [
                   Text(
-                    "Exercise",
-                    style: TextStyle(color: Colors.black, fontSize: 25),
+                    "Features",
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                  Spacer(),
+                  Text(
+                    "see more",
+                    style: TextStyle(
+                        color: Colors.green,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20),
                   ),
                   SizedBox(
-                    width: 85,
+                    width: 10,
                   ),
-                  Text("see more",
-                      style: TextStyle(color: Colors.green, fontSize: 25)),
                   Icon(
                     Icons.arrow_forward_ios,
+                    size: 15,
                     color: Colors.green,
-                  ),
+                  )
                 ],
               ),
               SizedBox(
-                height: 5,
+                height: 15,
               ),
               Row(
                 children: [
-                  ChoiceChip(
-              backgroundColor: Color.fromRGBO(249,245 , 255,1 ),
-                    avatar: Image.asset("assets/images/img_6.png"),
-                    label: Center(child: Text("Relaxtion")),
-                    selected: select,
-                    onSelected: (value) {
-                      select = value;
-                    },
+                  Expanded(
+                    child: ChoiceChip(
+                      backgroundColor: Color.fromRGBO(249, 245, 255, 1),
+                      avatar: Image.asset("assets/images/img_6.png"),
+                      label: Center(child: Text("Relaxtion")),
+                      selected: _select,
+                      onSelected: (value) {
+                        _select = value;
+                      },
+                    ),
                   ),
                   SizedBox(
-                    width: 70,
+                    width: 40,
                   ),
-                  ChoiceChip(
-                    backgroundColor: Color.fromRGBO(253, 242, 250, 1)
-    ,
-                    avatar: Image.asset("assets/images/img_7.png"),
-                    label: Center(child: Text("Meditation")),
-                    selected: select,
-                    onSelected: (value) {
-                      select = value;
-                    },
-                  ),
+                  Expanded(
+                    child: ChoiceChip(
+                      backgroundColor: Color.fromRGBO(253, 242, 250, 1),
+                      avatar: Image.asset("assets/images/img_7.png"),
+                      label: Center(child: Text("Meditation")),
+                      selected: _select,
+                      onSelected: (value) {
+                        _select = value;
+                      },
+                    ),
+                  )
                 ],
               ),
               SizedBox(
-                height: 5,
+                height: 10,
               ),
-              Expanded(
-                child: Row(children: [
-                  ChoiceChip(
-                    backgroundColor:Color.fromRGBO(255, 250, 245, 1),
-
-                  avatar: Image.asset("assets/images/img_8.png"),
-                    label: Center(child: Text("Beathing")),
-                    selected: select,
-                    onSelected: (value) {
-                      select = value;
-                    },
+              Row(
+                children: [
+                  Expanded(
+                    child: ChoiceChip(
+                      backgroundColor: Color.fromRGBO(255, 250, 245, 1),
+                      avatar: Image.asset("assets/images/img_8.png"),
+                      label: Center(child: Text("Beathing")),
+                      selected: _select,
+                      onSelected: (value) {
+                        _select = value;
+                      },
+                    ),
                   ),
                   SizedBox(
-                    width: 70,
+                    width: 40,
                   ),
-                  ChoiceChip(
-                    backgroundColor:Color.fromRGBO(240, 249, 255,1)
-
-      ,
+                  Expanded(
+                      child: ChoiceChip(
+                    backgroundColor: Color.fromRGBO(240, 249, 255, 1),
                     selectedColor: Colors.red,
                     avatar: Image.asset("assets/images/img_9.png"),
                     label: Center(child: Text("Yoka")),
-                    selected: select,
+                    selected: _select,
                     onSelected: (value) {
-                      select = value;
+                      _select = value;
                     },
-                  ),
-                ]),
+                  ))
+                ],
               ),
-            ])),
-        bottomNavigationBar: BottomNavigationBar(
-
-          selectedItemColor:Colors.blue,
-          currentIndex: index,
-          backgroundColor: Colors.white,
-          onTap: (value) {
-           Navigator.pushNamed(context,FiTest.routename);
-          },
-          items: [
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+          iconSize: 24,
+          showSelectedLabels: true,
+          backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
+          unselectedItemColor: Colors.grey,
+          selectedItemColor: Colors.blue,
+          onTap: (value) => Navigator.pushNamed(context, FiTest.routename),
+          items: const [
             BottomNavigationBarItem(
-                label: "",
-                icon: ImageIcon(
-                  AssetImage(
-                    "assets/images/img_10.png",
-                  ),
-                  color: Colors.black,
-                ),
-                backgroundColor: Colors.white30),
+              icon: ImageIcon(AssetImage("assets/images/img_10.png")),
+              label: '.',
+            ),
             BottomNavigationBarItem(
-                label: "",
-                icon: ImageIcon(
-                  AssetImage("assets/images/img_11.png"),
-                  color: Colors.black,
-                ),
-                backgroundColor: Colors.white30),
+              icon: ImageIcon(AssetImage("assets/images/img_11.png")),
+              label: 'item',
+            ),
             BottomNavigationBarItem(
-                label:  "",
-                icon: ImageIcon(
-                  AssetImage("assets/images/img_12.png"),
-                  color: Colors.black,
-                ),
-                backgroundColor: Colors.white30),
+              icon: ImageIcon(AssetImage("assets/images/img_12.png")),
+              label: 'celender',
+            ),
             BottomNavigationBarItem(
-                label: "",
-                icon: ImageIcon(
-                  AssetImage("assets/images/img_13.png"),
-                  color: Colors.black,
-                ),
-                backgroundColor: Colors.white30),
-          ],
-        ));
+              icon: ImageIcon(AssetImage("assets/images/img_13.png")),
+              label: 'profile',
+            )
+          ]),
+    ));
   }
 }
+
