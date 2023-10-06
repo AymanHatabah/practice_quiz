@@ -1,10 +1,10 @@
-import 'dart:io';
+
 
 import 'package:flutter/material.dart';
 import 'package:practice/Home.dart';
 import 'package:practice/slide_A.dart';
 import 'package:practice/slide_B.dart';
-import 'package:practice/slide_C.dart';
+
 
 
 void main() {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       Home.routename:(context) => Home(),
       FiTest.routename:(context) => FiTest(),
       SeTest.routename:(context) => SeTest(),
-      ThTest.routename:(context) => ThTest(),
+
 
     },
     );
